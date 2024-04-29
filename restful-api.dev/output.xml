@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.10.3 on win32)" generated="2024-04-25T16:38:43.626451" rpa="false" schemaversion="5">
+<suite id="s1" name="Restful-Api.Dev" source="D:\Code\robot-roboot\restful-api.dev">
+<suite id="s1-s1" name="Testcases" source="D:\Code\robot-roboot\restful-api.dev\testcases">
+<suite id="s1-s1-s1" name="Crud" source="D:\Code\robot-roboot\restful-api.dev\testcases\crud.robot">
+<test id="s1-s1-s1-t1" name="Create Update Delete Object" line="8">
+<kw name="Get Object Name" owner="keywords">
+<kw name="Word" owner="FakerLibrary">
+<msg time="2024-04-25T16:38:45.191742" level="INFO">${object_name} = sometimes</msg>
+<var>${object_name}</var>
+<doc>Generate a word.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.190725" elapsed="0.001017"/>
+</kw>
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2024-04-25T16:38:45.192749" level="INFO">Returning from the enclosing user keyword.</msg>
+<arg>${object_name}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.192749" elapsed="0.000000"/>
+</kw>
+<msg time="2024-04-25T16:38:45.193747" level="INFO">${name} = sometimes</msg>
+<var>${name}</var>
+<status status="PASS" start="2024-04-25T16:38:45.189694" elapsed="0.004053"/>
+</kw>
+<kw name="Create Object" owner="keywords">
+<kw name="Date Of Birth" owner="FakerLibrary">
+<msg time="2024-04-25T16:38:45.197548" level="INFO">${dob} = 1997-06-19</msg>
+<var>${dob}</var>
+<doc>Generate a random date of birth represented as a Date object,
+constrained by optional miminimum_age and maximum_age
+parameters.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.197548" elapsed="0.001243"/>
+</kw>
+<kw name="Convert Date" owner="DateTime">
+<msg time="2024-04-25T16:38:45.198791" level="INFO">${dob} = 19.06.1997</msg>
+<var>${dob}</var>
+<arg>${dob}</arg>
+<arg>result_format=%d.%m.%Y</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.198791" elapsed="0.000000"/>
+</kw>
+<kw name="Pydecimal" owner="FakerLibrary">
+<msg time="2024-04-25T16:38:45.200812" level="INFO">${salary} = 6981.76</msg>
+<var>${salary}</var>
+<arg>5</arg>
+<arg>2</arg>
+<arg>True</arg>
+<arg>1000.00</arg>
+<arg>9999.99</arg>
+<status status="PASS" start="2024-04-25T16:38:45.199818" elapsed="0.000994"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-04-25T16:38:45.201812" level="INFO">${salary} = 6981.76</msg>
+<var>${salary}</var>
+<arg>${salary}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.200812" elapsed="0.001000"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-04-25T16:38:45.202814" level="INFO">@{profile_fields} = [ username | name | sex | addess | mail ]</msg>
+<var>@{profile_fields}</var>
+<arg>username</arg>
+<arg>name</arg>
+<arg>sex</arg>
+<arg>addess</arg>
+<arg>mail</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.201812" elapsed="0.001002"/>
+</kw>
+<kw name="Profile" owner="FakerLibrary">
+<msg time="2024-04-25T16:38:45.209187" level="INFO">&amp;{object} = { username=michael20 | name=Anna Saunders | sex=F | mail=tyler75@yahoo.com }</msg>
+<var>&amp;{object}</var>
+<arg>fields=@{profile_fields}</arg>
+<doc>Generates a complete profile.
+If "fields" is not empty, only the fields in the list will be returned</doc>
+<status status="PASS" start="2024-04-25T16:38:45.202814" elapsed="0.006373"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-04-25T16:38:45.211637" level="INFO">&amp;{object} = { username=michael20 | name=Anna Saunders | sex=F | mail=tyler75@yahoo.com | dob=19.06.1997 | salary=6981.76 }</msg>
+<var>&amp;{object}</var>
+<arg>&amp;{object}</arg>
+<arg>dob=${dob}</arg>
+<arg>salary=${salary}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.209368" elapsed="0.002269"/>
+</kw>
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2024-04-25T16:38:45.212943" level="INFO">Returning from the enclosing user keyword.</msg>
+<arg>${object}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.211637" elapsed="0.001306"/>
+</kw>
+<msg time="2024-04-25T16:38:45.212943" level="INFO">&amp;{data} = { username=michael20 | name=Anna Saunders | sex=F | mail=tyler75@yahoo.com | dob=19.06.1997 | salary=6981.76 }</msg>
+<var>&amp;{data}</var>
+<status status="PASS" start="2024-04-25T16:38:45.196235" elapsed="0.016708"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-04-25T16:38:45.214962" level="INFO">&amp;{request_body} = { name=sometimes | data={'username': 'michael20', 'name': 'Anna Saunders', 'sex': 'F', 'mail': 'tyler75@yahoo.com', 'dob': '19.06.1997', 'salary': 6981.76} }</msg>
+<var>&amp;{request_body}</var>
+<arg>name=${name}</arg>
+<arg>data=${data}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.213959" elapsed="0.001003"/>
+</kw>
+<kw name="POST Request API" owner="keywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-04-25T16:38:45.216989" level="INFO">Creating Session using : alias=session, url=https://api.restful-api.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>session</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-04-25T16:38:45.215987" elapsed="0.001002"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-04-25T16:38:45.539675" level="INFO">POST Request : url=https://api.restful-api.dev/objects 
+ path_url=/objects 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '162', 'Content-Type': 'application/json'} 
+ body=b'{"name": "sometimes", "data": {"username": "michael20", "name": "Anna Saunders", "sex": "F", "mail": "tyler75@yahoo.com", "dob": "19.06.1997", "salary": 6981.76}}' 
+ </msg>
+<msg time="2024-04-25T16:38:45.540750" level="INFO">POST Response : url=https://api.restful-api.dev/objects 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 25 Apr 2024 09:38:45 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=Fx1zrtdzg6Swepd06Vdx0UrLAEmY%2F9G%2FRrC1IcHCa6GAqeof9I4SXY3hEB6pOF9YTotcshuiVC%2FNg86GHV8L7t%2FP46CesBKSzflJdKPNlO18udxntxVOJ6aUJZFLZB8r2LfphlSK"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '879d5ca72a6f87f9-SIN', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":"ff8081818f04ae07018f149f24b027e3","name":"sometimes","createdAt":"2024-04-25T09:38:45.040+00:00","data":{"username":"michael20","name":"Anna Saunders","sex":"F","mail":"tyler75@yahoo.com","dob":"19.06.1997","salary":6981.76}} 
+ </msg>
+<msg time="2024-04-25T16:38:45.540906" level="INFO">C:\Users\NeeranuchS\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1095: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.restful-api.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-04-25T16:38:45.540906" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>session</arg>
+<arg>url=${_path}</arg>
+<arg>json=${_body}</arg>
+<arg>expected_status=${_expected_status}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.218017" elapsed="0.322889"/>
+</kw>
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2024-04-25T16:38:45.541941" level="INFO">Returning from the enclosing user keyword.</msg>
+<arg>${response.json()}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.541941" elapsed="0.000000"/>
+</kw>
+<msg time="2024-04-25T16:38:45.542960" level="INFO">${response} = {'id': 'ff8081818f04ae07018f149f24b027e3', 'name': 'sometimes', 'createdAt': '2024-04-25T09:38:45.040+00:00', 'data': {'username': 'michael20', 'name': 'Anna Saunders', 'sex': 'F', 'mail': 'tyler75@ya...</msg>
+<var>${response}</var>
+<arg>${path}</arg>
+<arg>${request_body}</arg>
+<status status="PASS" start="2024-04-25T16:38:45.215987" elapsed="0.326973"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-04-25T16:38:45.543959" level="INFO">${expected_response_keys} = ['id', 'name', 'createdAt', 'data']</msg>
+<var>${expected_response_keys}</var>
+<arg>id</arg>
+<arg>name</arg>
+<arg>createdAt</arg>
+<arg>data</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.543959" elapsed="0.000000"/>
+</kw>
+<kw name="Response Should Contain Keys" owner="keywords">
+<kw name="Get Dictionary Keys" owner="Collections">
+<msg time="2024-04-25T16:38:45.545962" level="INFO">${object_keys} = ['createdAt', 'data', 'id', 'name']</msg>
+<var>${object_keys}</var>
+<arg>${object}</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.544964" elapsed="0.000998"/>
+</kw>
+<kw name="Sort List" owner="Collections">
+<arg>${object_keys}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.545962" elapsed="0.000000"/>
+</kw>
+<kw name="Sort List" owner="Collections">
+<arg>${expected_keys}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.545962" elapsed="0.000000"/>
+</kw>
+<kw name="Log List" owner="Collections">
+<msg time="2024-04-25T16:38:45.547323" level="INFO">List length is 4 and it contains following items:
+0: createdAt
+1: data
+2: id
+3: name</msg>
+<arg>${object_keys}</arg>
+<doc>Logs the length and contents of the ``list`` using given ``level``.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.545962" elapsed="0.001361"/>
+</kw>
+<kw name="Log List" owner="Collections">
+<msg time="2024-04-25T16:38:45.547323" level="INFO">List length is 4 and it contains following items:
+0: createdAt
+1: data
+2: id
+3: name</msg>
+<arg>${expected_keys}</arg>
+<doc>Logs the length and contents of the ``list`` using given ``level``.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.547323" elapsed="0.000000"/>
+</kw>
+<kw name="Lists Should Be Equal" owner="Collections">
+<msg time="2024-04-25T16:38:45.548569" level="INFO">False</msg>
+<arg>${object_keys}</arg>
+<arg>${expected_keys}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.547323" elapsed="0.001246"/>
+</kw>
+<arg>${response}</arg>
+<arg>${expected_response_keys}</arg>
+<status status="PASS" start="2024-04-25T16:38:45.544964" elapsed="0.003605"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-04-25T16:38:45.549823" level="INFO">${response_id} = ff8081818f04ae07018f149f24b027e3</msg>
+<var>${response_id}</var>
+<arg>${response}</arg>
+<arg>id</arg>
+<arg>0</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.548569" elapsed="0.001254"/>
+</kw>
+<kw name="GET Request API" owner="keywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-04-25T16:38:45.551871" level="INFO">Creating Session using : alias=session, url=https://api.restful-api.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>session</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-04-25T16:38:45.551871" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-04-25T16:38:45.846008" level="INFO">GET Request : url=https://api.restful-api.dev/objects/ff8081818f04ae07018f149f24b027e3 
+ path_url=/objects/ff8081818f04ae07018f149f24b027e3 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-04-25T16:38:45.846008" level="INFO">GET Response : url=https://api.restful-api.dev/objects/ff8081818f04ae07018f149f24b027e3 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 25 Apr 2024 09:38:45 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=y3JU2lAJxL5Lwvzo3Z7gNKLKzRYlT%2FpVJ5xL3D1i%2BkmiP0Zce4Z%2Frljq3NzEK%2BEp9C5oxY1V1vv4CX0K43O7II90FoAAL5HzYATq9deVwNxF46YoJu6nCTq34Nl6NraKgS7k9Nxi"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '879d5ca91c5a9e38-SIN', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":"ff8081818f04ae07018f149f24b027e3","name":"sometimes","data":{"username":"michael20","name":"Anna Saunders","sex":"F","mail":"tyler75@yahoo.com","dob":"19.06.1997","salary":6981.76}} 
+ </msg>
+<msg time="2024-04-25T16:38:45.846008" level="INFO">C:\Users\NeeranuchS\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1095: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.restful-api.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-04-25T16:38:45.847022" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>session</arg>
+<arg>url=${_path}</arg>
+<arg>params=${_param}</arg>
+<arg>expected_status=${_expected_status}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.551871" elapsed="0.295151"/>
+</kw>
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2024-04-25T16:38:45.847022" level="INFO">Returning from the enclosing user keyword.</msg>
+<arg>${response.json()}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.847022" elapsed="0.000000"/>
+</kw>
+<msg time="2024-04-25T16:38:45.848535" level="INFO">${response} = {'id': 'ff8081818f04ae07018f149f24b027e3', 'name': 'sometimes', 'data': {'username': 'michael20', 'name': 'Anna Saunders', 'sex': 'F', 'mail': 'tyler75@yahoo.com', 'dob': '19.06.1997', 'salary': 6981....</msg>
+<var>${response}</var>
+<arg>${path}/${response_id}</arg>
+<status status="PASS" start="2024-04-25T16:38:45.550855" elapsed="0.297680"/>
+</kw>
+<kw name="Dictionary Should Contain Sub Dictionary" owner="Collections">
+<msg time="2024-04-25T16:38:45.849549" level="INFO">False</msg>
+<arg>${response}</arg>
+<arg>${request_body}</arg>
+<doc>Fails unless all items in ``dict2`` are found from ``dict1``.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.848535" elapsed="0.001083"/>
+</kw>
+<kw name="Get Object Name" owner="keywords">
+<kw name="Word" owner="FakerLibrary">
+<msg time="2024-04-25T16:38:45.850842" level="INFO">${object_name} = everyone</msg>
+<var>${object_name}</var>
+<doc>Generate a word.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.850842" elapsed="0.000000"/>
+</kw>
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2024-04-25T16:38:45.850842" level="INFO">Returning from the enclosing user keyword.</msg>
+<arg>${object_name}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.850842" elapsed="0.000000"/>
+</kw>
+<msg time="2024-04-25T16:38:45.851927" level="INFO">${expected_name} = everyone</msg>
+<var>${expected_name}</var>
+<status status="PASS" start="2024-04-25T16:38:45.849777" elapsed="0.002150"/>
+</kw>
+<kw name="Create Object" owner="keywords">
+<kw name="Date Of Birth" owner="FakerLibrary">
+<msg time="2024-04-25T16:38:45.852945" level="INFO">${dob} = 2012-06-07</msg>
+<var>${dob}</var>
+<doc>Generate a random date of birth represented as a Date object,
+constrained by optional miminimum_age and maximum_age
+parameters.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.852945" elapsed="0.000997"/>
+</kw>
+<kw name="Convert Date" owner="DateTime">
+<msg time="2024-04-25T16:38:45.853942" level="INFO">${dob} = 07.06.2012</msg>
+<var>${dob}</var>
+<arg>${dob}</arg>
+<arg>result_format=%d.%m.%Y</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.853942" elapsed="0.000000"/>
+</kw>
+<kw name="Pydecimal" owner="FakerLibrary">
+<msg time="2024-04-25T16:38:45.855055" level="INFO">${salary} = 8456.01</msg>
+<var>${salary}</var>
+<arg>5</arg>
+<arg>2</arg>
+<arg>True</arg>
+<arg>1000.00</arg>
+<arg>9999.99</arg>
+<status status="PASS" start="2024-04-25T16:38:45.853942" elapsed="0.001620"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-04-25T16:38:45.855562" level="INFO">${salary} = 8456.01</msg>
+<var>${salary}</var>
+<arg>${salary}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.855562" elapsed="0.000000"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-04-25T16:38:45.856572" level="INFO">@{profile_fields} = [ username | name | sex | addess | mail ]</msg>
+<var>@{profile_fields}</var>
+<arg>username</arg>
+<arg>name</arg>
+<arg>sex</arg>
+<arg>addess</arg>
+<arg>mail</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.855562" elapsed="0.001010"/>
+</kw>
+<kw name="Profile" owner="FakerLibrary">
+<msg time="2024-04-25T16:38:45.860476" level="INFO">&amp;{object} = { username=sandra40 | name=Michael Walls | sex=M | mail=alexa66@gmail.com }</msg>
+<var>&amp;{object}</var>
+<arg>fields=@{profile_fields}</arg>
+<doc>Generates a complete profile.
+If "fields" is not empty, only the fields in the list will be returned</doc>
+<status status="PASS" start="2024-04-25T16:38:45.856572" elapsed="0.003904"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-04-25T16:38:45.861496" level="INFO">&amp;{object} = { username=sandra40 | name=Michael Walls | sex=M | mail=alexa66@gmail.com | dob=07.06.2012 | salary=8456.01 }</msg>
+<var>&amp;{object}</var>
+<arg>&amp;{object}</arg>
+<arg>dob=${dob}</arg>
+<arg>salary=${salary}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.860476" elapsed="0.001020"/>
+</kw>
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2024-04-25T16:38:45.862002" level="INFO">Returning from the enclosing user keyword.</msg>
+<arg>${object}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.862002" elapsed="0.000000"/>
+</kw>
+<msg time="2024-04-25T16:38:45.862002" level="INFO">&amp;{data} = { username=sandra40 | name=Michael Walls | sex=M | mail=alexa66@gmail.com | dob=07.06.2012 | salary=8456.01 }</msg>
+<var>&amp;{data}</var>
+<status status="PASS" start="2024-04-25T16:38:45.851927" elapsed="0.010075"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-04-25T16:38:45.863015" level="INFO">&amp;{request_body} = { name=everyone | data={'username': 'sandra40', 'name': 'Michael Walls', 'sex': 'M', 'mail': 'alexa66@gmail.com', 'dob': '07.06.2012', 'salary': 8456.01} }</msg>
+<var>&amp;{request_body}</var>
+<arg>name=${expected_name}</arg>
+<arg>data=${data}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.863015" elapsed="0.000000"/>
+</kw>
+<kw name="PUT Request API" owner="keywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-04-25T16:38:45.865109" level="INFO">Creating Session using : alias=session, url=https://api.restful-api.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>session</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-04-25T16:38:45.865109" elapsed="0.001116"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2024-04-25T16:38:46.153243" level="INFO">PUT Request : url=https://api.restful-api.dev/objects/ff8081818f04ae07018f149f24b027e3 
+ path_url=/objects/ff8081818f04ae07018f149f24b027e3 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '160', 'Content-Type': 'application/json'} 
+ body=b'{"name": "everyone", "data": {"username": "sandra40", "name": "Michael Walls", "sex": "M", "mail": "alexa66@gmail.com", "dob": "07.06.2012", "salary": 8456.01}}' 
+ </msg>
+<msg time="2024-04-25T16:38:46.153243" level="INFO">PUT Response : url=https://api.restful-api.dev/objects/ff8081818f04ae07018f149f24b027e3 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 25 Apr 2024 09:38:45 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=lvzgFdSmRbfrvTQYvj3i3%2Fc5UhLmKZuLf6IPkUvHbl0H0HkpkQHLEv3dedooallL3vfV4F2G8N4hhW9Lrj%2FplvtSBl%2BIjdzNCG0Wu98CrtmXbIW0oi7oPv0cTPZHJA3WWz9kINXY"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '879d5cab0a3e3df0-SIN', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":"ff8081818f04ae07018f149f24b027e3","name":"everyone","updatedAt":"2024-04-25T09:38:45.656+00:00","data":{"username":"sandra40","name":"Michael Walls","sex":"M","mail":"alexa66@gmail.com","dob":"07.06.2012","salary":8456.01}} 
+ </msg>
+<msg time="2024-04-25T16:38:46.153243" level="INFO">C:\Users\NeeranuchS\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1095: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.restful-api.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-04-25T16:38:46.154528" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>session</arg>
+<arg>url=${_path}</arg>
+<arg>json=${_body}</arg>
+<arg>expected_status=${_expected_status}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-04-25T16:38:45.866225" elapsed="0.288303"/>
+</kw>
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2024-04-25T16:38:46.154528" level="INFO">Returning from the enclosing user keyword.</msg>
+<arg>${response.json()}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2024-04-25T16:38:46.154528" elapsed="0.001261"/>
+</kw>
+<msg time="2024-04-25T16:38:46.156895" level="INFO">${response} = {'id': 'ff8081818f04ae07018f149f24b027e3', 'name': 'everyone', 'updatedAt': '2024-04-25T09:38:45.656+00:00', 'data': {'username': 'sandra40', 'name': 'Michael Walls', 'sex': 'M', 'mail': 'alexa66@gmai...</msg>
+<var>${response}</var>
+<arg>${path}/${response_id}</arg>
+<arg>${request_body}</arg>
+<status status="PASS" start="2024-04-25T16:38:45.864095" elapsed="0.292800"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-04-25T16:38:46.156895" level="INFO">${expected_response_keys} = ['id', 'name', 'updatedAt', 'data']</msg>
+<var>${expected_response_keys}</var>
+<arg>id</arg>
+<arg>name</arg>
+<arg>updatedAt</arg>
+<arg>data</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-04-25T16:38:46.156895" elapsed="0.001345"/>
+</kw>
+<kw name="Response Should Contain Keys" owner="keywords">
+<kw name="Get Dictionary Keys" owner="Collections">
+<msg time="2024-04-25T16:38:46.159333" level="INFO">${object_keys} = ['data', 'id', 'name', 'updatedAt']</msg>
+<var>${object_keys}</var>
+<arg>${object}</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<status status="PASS" start="2024-04-25T16:38:46.159333" elapsed="0.001012"/>
+</kw>
+<kw name="Sort List" owner="Collections">
+<arg>${object_keys}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="PASS" start="2024-04-25T16:38:46.160345" elapsed="0.000000"/>
+</kw>
+<kw name="Sort List" owner="Collections">
+<arg>${expected_keys}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="PASS" start="2024-04-25T16:38:46.160345" elapsed="0.001036"/>
+</kw>
+<kw name="Log List" owner="Collections">
+<msg time="2024-04-25T16:38:46.161381" level="INFO">List length is 4 and it contains following items:
+0: data
+1: id
+2: name
+3: updatedAt</msg>
+<arg>${object_keys}</arg>
+<doc>Logs the length and contents of the ``list`` using given ``level``.</doc>
+<status status="PASS" start="2024-04-25T16:38:46.161381" elapsed="0.000509"/>
+</kw>
+<kw name="Log List" owner="Collections">
+<msg time="2024-04-25T16:38:46.161890" level="INFO">List length is 4 and it contains following items:
+0: data
+1: id
+2: name
+3: updatedAt</msg>
+<arg>${expected_keys}</arg>
+<doc>Logs the length and contents of the ``list`` using given ``level``.</doc>
+<status status="PASS" start="2024-04-25T16:38:46.161890" elapsed="0.000000"/>
+</kw>
+<kw name="Lists Should Be Equal" owner="Collections">
+<msg time="2024-04-25T16:38:46.162901" level="INFO">False</msg>
+<arg>${object_keys}</arg>
+<arg>${expected_keys}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" start="2024-04-25T16:38:46.161890" elapsed="0.001011"/>
+</kw>
+<arg>${response}</arg>
+<arg>${expected_response_keys}</arg>
+<status status="PASS" start="2024-04-25T16:38:46.158240" elapsed="0.004661"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-04-25T16:38:46.163902" level="INFO">${updated_name} = everyone</msg>
+<var>${updated_name}</var>
+<arg>${response}</arg>
+<arg>name</arg>
+<arg>${None}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-04-25T16:38:46.163902" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${updated_name}</arg>
+<arg>${expected_name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-04-25T16:38:46.164997" elapsed="0.000000"/>
+</kw>
+<kw name="Delete Request API" owner="keywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-04-25T16:38:46.167009" level="INFO">Creating Session using : alias=session, url=https://api.restful-api.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>session</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-04-25T16:38:46.167009" elapsed="0.000000"/>
+</kw>
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2024-04-25T16:38:46.459488" level="INFO">DELETE Request : url=https://api.restful-api.dev/objects/ff8081818f04ae07018f149f24b027e3 
+ path_url=/objects/ff8081818f04ae07018f149f24b027e3 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2024-04-25T16:38:46.459488" level="INFO">DELETE Response : url=https://api.restful-api.dev/objects/ff8081818f04ae07018f149f24b027e3 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 25 Apr 2024 09:38:46 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=KHDqCVTx1blMefYjckbdLZBkIet8UzVFbQtc5qeGq9nRsEuXuRhYpR%2BJe16kSYiQbUeZwMy4JxLYSOQ%2FoDzQyN0kNAlFuxQvCUNtcSFlrO8Jj9n3D1xU7XBHx73jEfljUrqfn%2B6h"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '879d5cacedc387f5-SIN', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"message":"Object with id = ff8081818f04ae07018f149f24b027e3 has been deleted."} 
+ </msg>
+<msg time="2024-04-25T16:38:46.460560" level="INFO">C:\Users\NeeranuchS\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1095: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.restful-api.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-04-25T16:38:46.460696" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>session</arg>
+<arg>url=${_path}</arg>
+<arg>expected_status=${_expected_status}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-04-25T16:38:46.167009" elapsed="0.293687"/>
+</kw>
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2024-04-25T16:38:46.461723" level="INFO">Returning from the enclosing user keyword.</msg>
+<arg>${response.json()}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2024-04-25T16:38:46.461723" elapsed="0.000000"/>
+</kw>
+<msg time="2024-04-25T16:38:46.462730" level="INFO">${response} = {'message': 'Object with id = ff8081818f04ae07018f149f24b027e3 has been deleted.'}</msg>
+<var>${response}</var>
+<arg>${path}/${response_id}</arg>
+<status status="PASS" start="2024-04-25T16:38:46.166009" elapsed="0.296721"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-04-25T16:38:46.463790" level="INFO">${delete_msg} = Object with id = ff8081818f04ae07018f149f24b027e3 has been deleted.</msg>
+<var>${delete_msg}</var>
+<arg>${response}</arg>
+<arg>message</arg>
+<arg>0</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-04-25T16:38:46.463790" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain Any" owner="BuiltIn">
+<arg>${delete_msg}</arg>
+<arg>${response_id}</arg>
+<arg>has been deleted</arg>
+<doc>Fails if ``container`` does not contain any of the ``*items``.</doc>
+<status status="PASS" start="2024-04-25T16:38:46.465305" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-25T16:38:45.187979" elapsed="1.278335"/>
+</test>
+<status status="PASS" start="2024-04-25T16:38:43.687161" elapsed="2.780155"/>
+</suite>
+<status status="PASS" start="2024-04-25T16:38:43.682160" elapsed="2.787676"/>
+</suite>
+<status status="PASS" start="2024-04-25T16:38:43.629893" elapsed="2.843346"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Restful-Api.Dev">Restful-Api.Dev</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testcases">Restful-Api.Dev.Testcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Crud">Restful-Api.Dev.Testcases.Crud</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
